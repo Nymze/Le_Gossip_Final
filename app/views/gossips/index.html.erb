@@ -43,6 +43,26 @@
 <h1> Hello My Friend</h1>
 <button> Inscris toi </button>
 
+ <tr>
+      <th>Anonymous author</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+
+
+
+<% @gossips.each do |gossip| %>
+
+      <tr>
+        <td><%= gossip.anonymous_author %></td>
+        <td><%= gossip.content %></td>
+
+         </tr>
+
+
+        <% end %>
+
+        
 
 
 <% end %>
