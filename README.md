@@ -1,7 +1,7 @@
 
 # Heroku 
 
-V1.2 => https://nameless-journey-63445.herokuapp.com/
+V1.2 => https://nameless-journey-63445.herokuapp.com/   // github : https://github.com/Nymze/Gossip_V1.2
 
  (Le visuel peut varier en fonction des navigateurs)
 
