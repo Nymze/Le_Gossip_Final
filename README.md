@@ -7,7 +7,7 @@ V1.2 => https://nameless-journey-63445.herokuapp.com/
 
 -----------------------------------------------------------
 
-V1
+V1 - (Premiere version avec bugs)
  https://infinite-thicket-56570.herokuapp.com/
  
 
