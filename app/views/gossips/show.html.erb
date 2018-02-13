@@ -2,7 +2,7 @@
 
 <p>
   <strong>Anonymous author:</strong>
-  <%= @gossip.anonymous_author %>
+  <%= @gossip.user.try(:email) %>
 </p>
 
 <p>

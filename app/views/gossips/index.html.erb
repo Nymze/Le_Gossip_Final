@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gossips</h1>
+
 
 <table>
   <thead>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
    
   </thead>
 
@@ -36,32 +37,23 @@
       </tr>
     <% end %>
 
-<%= link_to 'New Gossip', new_gossip_path %>
+<%= link_to 'New Gossip', new_gossip_path, class: "btn btn-lg btn-primary" %>
 
 
 <% else %>  
 
-<h1> Hello My Friend</h1>
-<button> Inscris toi </button>
+<h1> Helllooooooo</h1>
+<h2> TU dois être Signed In pour voir les gossips</h2>
+<div class = "butts">
+<%= link_to "Sign In", new_user_session_path, class: "btn btn-lg btn-primary"  %> 
+<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-lg btn-primary"  %> 
 
- <tr>
-      <th>Anonymous author</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-
+</div>
 
 
-<% @gossips.each do |gossip| %>
-
-      <tr>
-        <td><%= gossip.user.try(:email) %></td>
-        <td><%= gossip.content %></td>
-
-         </tr>
 
 
-        <% end %>
+
 
         
 
@@ -73,6 +65,7 @@
 
    
   </tbody>
+
 </table>
 
 <br>

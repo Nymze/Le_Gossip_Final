@@ -48,7 +48,7 @@ class GossipsController < ApplicationController
   def update
     respond_to do |format|
       if @gossip.update(gossip_params)
-        format.html { redirect_to @gossip, notice: 'Gossip was successfully updated.' }
+        format.html { redirect_to root_path , notice: 'Gossip was successfully updated.' }
         format.json { render :show, status: :ok, location: @gossip }
       else
         format.html { render :edit }
