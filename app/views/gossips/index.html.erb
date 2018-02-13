@@ -26,8 +26,9 @@
 
 
  <% @gossips.each do |gossip| %>
+
       <tr>
-        <td><%= gossip.anonymous_author %></td>
+        <td><%= gossip.user.try(:email) %></td>
         <td><%= gossip.content %></td>
         <td><%= link_to 'Show', gossip %></td>
         <td><%= link_to 'Edit', edit_gossip_path(gossip) %></td>
@@ -54,7 +55,7 @@
 <% @gossips.each do |gossip| %>
 
       <tr>
-        <td><%= gossip.anonymous_author %></td>
+        <td><%= gossip.user.try(:email) %></td>
         <td><%= gossip.content %></td>
 
          </tr>

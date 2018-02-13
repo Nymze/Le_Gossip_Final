@@ -25,7 +25,10 @@ class GossipsController < ApplicationController
   # POST /gossips.json
   def create
     @gossip = Gossip.new(gossip_params)
-
+    @gossip.user = current_user
+    @gossip.save
+    redirect_to gossips_path
+=begin
     respond_to do |format|
       if @gossip.save
         format.html { redirect_to @gossip, notice: 'Gossip was successfully created.' }
@@ -34,7 +37,10 @@ class GossipsController < ApplicationController
         format.html { render :new }
         format.json { render json: @gossip.errors, status: :unprocessable_entity }
       end
+     
     end
+=end 
+    
   end
 
   # PATCH/PUT /gossips/1
@@ -64,11 +70,13 @@ class GossipsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gossip
+    
+
       @gossip = Gossip.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gossip_params
-      params.require(:gossip).permit(:anonymous_author, :content)
+      params.require(:gossip).permit(:user, :content)
     end
 end
