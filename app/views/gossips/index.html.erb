@@ -4,15 +4,28 @@
 
 <table>
   <thead>
-    <tr>
+   
+  </thead>
+
+  <tbody>
+
+<header>
+
+
+</header>
+
+
+<ul>
+<% if user_signed_in? %>
+
+ <tr>
       <th>Anonymous author</th>
       <th>Content</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
 
-  <tbody>
-    <% @gossips.each do |gossip| %>
+
+ <% @gossips.each do |gossip| %>
       <tr>
         <td><%= gossip.anonymous_author %></td>
         <td><%= gossip.content %></td>
@@ -21,9 +34,26 @@
         <td><%= link_to 'Destroy', gossip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+<%= link_to 'New Gossip', new_gossip_path %>
+
+
+<% else %>  
+<h1> Hello My Friend</h1>
+
+
+
+<% end %>
+
+</ul>
+
+
+   
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Gossip', new_gossip_path %>
+
+
+
